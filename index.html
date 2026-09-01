@@ -5,47 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Predator Laboratory | Premium Peptides</title>
 <style>
-:root{--lime:#a8d400;--black:#070707;--panel:#111;--muted:#bdbdbd;--line:#333}
+:root{--blue:#0a78dc;--blue-glow:rgba(10,120,220,.5);--black:#070707;--panel:#111;--muted:#bdbdbd;--line:#333}
 *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#090909;color:#fff}
 a{color:inherit;text-decoration:none}.hero{min-height:650px;position:relative;overflow:hidden;padding-top:78px;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.45)),#090909;display:flex;align-items:center}
 .wrap{width:min(1180px,92%);margin:auto}.hero-inner{max-width:650px;padding:70px 0}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:50px;align-items:center}
+.hero-logo-wrap{display:flex;align-items:center;justify-content:center}
+.hero-logo{width:clamp(430px,34vw,520px);max-width:100%;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 0 55px var(--blue-glow)) drop-shadow(0 25px 40px rgba(0,0,0,.6));animation:logoPulse 4s ease-in-out infinite}
+@media(max-width:1000px){
+ .hero-grid{grid-template-columns:1fr;text-align:center;gap:30px}
+ .hero-inner{max-width:100%}
+ .hero-logo{width:clamp(260px,60vw,300px);margin:0 auto}
+}
 .navbar{position:absolute;top:0;left:0;right:0;z-index:10;background:rgba(5,5,5,.82);backdrop-filter:blur(8px);border-bottom:1px solid #292929}
 
 
 @keyframes predatorFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes logoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
 
-.brand-banner{margin-top:38px;padding:24px 30px;border:1px solid #454545;border-radius:14px;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(30,30,30,.78));display:flex;align-items:center;justify-content:space-between;gap:25px;box-shadow:0 12px 35px rgba(0,0,0,.3)}
-.brand-banner-copy h2{margin:0 0 6px;font-size:clamp(22px,4vw,38px);letter-spacing:1px}
-.brand-banner-copy h2 span{color:var(--lime)}
-.brand-banner-copy p{margin:0;color:#bbb;font-size:14px}
-.brand-banner .banner-logo{width:85px;height:85px;object-fit:contain;background:transparent;border-radius:10px;padding:0;flex:none}
-@media(max-width:650px){.brand-banner{flex-direction:column;text-align:center;padding:22px}.brand-banner .banner-logo{width:75px;height:75px}}
+.brand-banner{margin-top:38px;padding:20px 30px;border:1px solid #454545;border-radius:14px;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(30,30,30,.78));text-align:center;box-shadow:0 12px 35px rgba(0,0,0,.3)}
+.brand-banner-copy p{margin:0;color:#bbb;font-size:14px;letter-spacing:.5px}
 .hero-inner{animation:predatorFade .9s ease-out both}
-.brand-logo{animation:logoPulse 4s ease-in-out infinite}
 .card{animation:predatorFade .7s ease-out both}
 
 
 
 .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}
 .product-card{background:linear-gradient(180deg,#171717,#0d0d0d);border:1px solid #333;border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}
-.product-card:hover{transform:translateY(-5px);border-color:var(--lime);box-shadow:0 14px 35px rgba(0,0,0,.35)}
+.product-card:hover{transform:translateY(-5px);border-color:var(--blue);box-shadow:0 14px 35px rgba(0,0,0,.35)}
 .vial-art{height:175px;background:radial-gradient(circle at 50% 40%,#303030 0,#161616 48%,#090909 100%);display:flex;align-items:center;justify-content:center;position:relative}
 .vial{width:68px;height:105px;border-radius:8px 8px 11px 11px;background:linear-gradient(90deg,#ddd,#fff 45%,#cfcfcf);position:relative;box-shadow:0 12px 25px rgba(0,0,0,.45)}
 .vial:before{content:"";position:absolute;top:-17px;left:7px;width:54px;height:20px;border-radius:6px 6px 3px 3px;background:linear-gradient(#222,#888,#222)}
 .vial:after{content:"PREDATOR\\A RESEARCH";white-space:pre;text-align:center;line-height:1.15;position:absolute;left:7px;right:7px;top:38px;padding:7px 2px;background:#f5f5f5;color:#111;font-size:8px;font-weight:900;letter-spacing:.5px}
-.detail-btn{font-size:11px;padding:9px 12px;margin-top:2px}.product-card-body{padding:19px}.product-card h3{margin:0 0 7px;font-size:17px}.product-card .cat{font-size:10px;color:var(--lime);font-weight:900;text-transform:uppercase;letter-spacing:1px}.product-card p{font-size:13px;color:#aaa;line-height:1.5;min-height:58px}.product-price{font-weight:900;font-size:18px;margin-top:12px}.product-price span{color:#999;font-size:12px;font-weight:600}
+.detail-btn{font-size:11px;padding:9px 12px;margin-top:2px}.product-card-body{padding:19px}.product-card h3{margin:0 0 7px;font-size:17px}.product-card .cat{font-size:10px;color:var(--blue);font-weight:900;text-transform:uppercase;letter-spacing:1px}.product-card p{font-size:13px;color:#aaa;line-height:1.5;min-height:58px}.product-price{font-weight:900;font-size:18px;margin-top:12px}.product-price span{color:#999;font-size:12px;font-weight:600}
 @media(max-width:1000px){.product-grid{grid-template-columns:repeat(3,1fr)}} 
 @media(max-width:760px){.product-grid{grid-template-columns:repeat(2,1fr)}} 
 @media(max-width:500px){.product-grid{grid-template-columns:1fr}}
 .category-filter{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:0 auto 25px}
 .category-btn{background:#151515;color:#ddd;border:1px solid #444;border-radius:999px;padding:10px 14px;cursor:pointer;font-weight:800;font-size:12px}
-.category-btn:hover,.category-btn.active{background:var(--lime);color:#080808;border-color:var(--lime)}
-.product-icon{font-size:28px;color:var(--lime);margin-bottom:8px}
+.category-btn:hover,.category-btn.active{background:var(--blue);color:#080808;border-color:var(--blue)}
+.product-icon{font-size:28px;color:var(--blue);margin-bottom:8px}
 .category-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#888;font-weight:800;margin-bottom:8px}
 .description-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
 .product-description{background:#111;border:1px solid #333;border-radius:10px;padding:20px}
-.product-description h3{font-size:16px;margin:0 0 9px;color:var(--lime)}
+.product-description h3{font-size:16px;margin:0 0 9px;color:var(--blue)}
 .product-description p{margin:0;color:#bbb;line-height:1.55;font-size:14px}
 @media(max-width:950px){.description-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.description-grid{grid-template-columns:1fr}}
@@ -68,16 +71,16 @@ a{color:inherit;text-decoration:none}.hero{min-height:650px;position:relative;ov
 }
 .nav-inner{width:min(1180px,92%);margin:auto;height:78px;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px}
-.nav-brand img{width:48px;height:48px;object-fit:contain;background:transparent;border-radius:8px;padding:0}
-.nav-brand span{color:var(--lime)}
+.nav-brand img{width:56px;height:56px;object-fit:contain;background:transparent;border-radius:8px;padding:0}
+.nav-brand span{color:var(--blue)}
 .nav-links{display:flex;gap:26px;font-size:14px;font-weight:800}
-.nav-links a{transition:.2s}.nav-links a:hover{color:var(--lime)}
-.brand-logo{width:220px;height:220px;object-fit:contain;background:transparent;border-radius:16px;padding:0;margin-bottom:22px;display:block;box-shadow:0 0 0 1px #444,0 12px 35px rgba(0,0,0,.35)}.eyebrow{color:var(--lime);font-weight:800;letter-spacing:3px}.hero h1{font-size:clamp(48px,8vw,88px);line-height:.9;margin:14px 0}.hero h1 span{color:var(--lime)}.hero p{font-size:20px;line-height:1.6;color:#ddd}.btn{display:inline-block;background:var(--lime);color:#050505;padding:15px 24px;border-radius:6px;font-weight:900;margin-top:15px}
-.notice{background:#161616;border-top:1px solid #333;border-bottom:1px solid #333;text-align:center;padding:16px;color:#ddd}.notice strong{color:var(--lime)}
+.nav-links a{transition:.2s}.nav-links a:hover{color:var(--blue)}
+.eyebrow{color:var(--blue);font-weight:800;letter-spacing:3px}.hero h1{font-size:clamp(48px,8vw,88px);line-height:.9;margin:14px 0}.hero h1 span{color:var(--blue)}.hero p{font-size:20px;line-height:1.6;color:#ddd}.btn{display:inline-block;background:var(--blue);color:#050505;padding:15px 24px;border-radius:6px;font-weight:900;margin-top:15px}
+.notice{background:#161616;border-top:1px solid #333;border-bottom:1px solid #333;text-align:center;padding:16px;color:#ddd}.notice strong{color:var(--blue)}
 section{padding:70px 0}.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-size:40px;margin:0 0 10px}.section-title p{color:var(--muted)}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:12px}.card .icon{font-size:32px;color:var(--lime)}.card h3{margin:12px 0}.card p{color:#bbb;line-height:1.55}
-.catalog{background:#0e0e0e}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}.catalog table{width:100%;border-collapse:collapse;min-width:700px}.catalog th,.catalog td{padding:14px 16px;border-bottom:1px solid #292929;text-align:left}.catalog th{background:var(--lime);color:#070707}.catalog td:last-child{font-weight:800}
-.price{color:#fff}.research{color:var(--lime);font-weight:800}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:12px}.card .icon{font-size:32px;color:var(--blue)}.card h3{margin:12px 0}.card p{color:#bbb;line-height:1.55}
+.catalog{background:#0e0e0e}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}.catalog table{width:100%;border-collapse:collapse;min-width:700px}.catalog th,.catalog td{padding:14px 16px;border-bottom:1px solid #292929;text-align:left}.catalog th{background:var(--blue);color:#070707}.catalog td:last-child{font-weight:800}
+.price{color:#fff}.research{color:var(--blue);font-weight:800}
 .cta{background:linear-gradient(135deg,#141414,#090909);border:1px solid #333;border-radius:16px;padding:50px;text-align:center}.cta h2{font-size:40px;margin:0 0 12px}.cta p{color:#bbb;max-width:700px;margin:0 auto 18px;line-height:1.6}
 
 
@@ -92,9 +95,9 @@ section{padding:70px 0}.section-title{text-align:center;margin-bottom:35px}.sect
 .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .footer-brand img{width:58px;height:58px;object-fit:contain;background:transparent;border-radius:9px;padding:0}
 .footer-brand strong{font-size:18px;letter-spacing:1px}
-.footer-brand span{color:var(--lime)}
+.footer-brand span{color:var(--blue)}
 footer{padding:35px 0;border-top:1px solid #222;color:#888;font-size:14px}.fine{font-size:12px;color:#777;line-height:1.6;margin-top:20px}
-@media(max-width:800px){.brand-logo{width:165px;height:165px}.features{grid-template-columns:1fr}.hero{min-height:560px}.hero-inner{padding:45px 0}section{padding:50px 0}.cta{padding:35px 22px}}
+@media(max-width:800px){.features{grid-template-columns:1fr}.hero{min-height:auto}.hero-inner{padding:45px 0}section{padding:50px 0}.cta{padding:35px 22px}}
 </style>
 </head>
 <body id="top">
@@ -117,21 +120,25 @@ footer{padding:35px 0;border-top:1px solid #222;color:#888;font-size:14px}.fine{
 </nav>
 
 <header class="hero">
-  <div class="wrap"><div class="hero-inner">
-    <img class="brand-logo" src="images/logo.jpg" alt="Predator Laboratory logo">
-    <div class="eyebrow">PREDATOR LABORATORY • EST. 2024</div>
-    <h1>PREMIUM <span>PEPTIDES.</span></h1>
-    <p>Research-focused peptide catalog presented with a clean, premium laboratory aesthetic.</p>
-    <a class="btn" href="#catalog">VIEW CATALOG</a>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-inner">
+        <div class="eyebrow">PREDATOR LABORATORY • EST. 2024</div>
+        <h1>PREMIUM <span>PEPTIDES.</span></h1>
+        <p>Research-focused peptide catalog presented with a clean, premium laboratory aesthetic.</p>
+        <a class="btn" href="#catalog">VIEW CATALOG</a>
+      </div>
+      <div class="hero-logo-wrap">
+        <img class="hero-logo" src="images/logo.jpg" alt="Predator Laboratory logo">
+      </div>
+    </div>
 
     <div class="brand-banner">
       <div class="brand-banner-copy">
-        <h2>PREMIUM <span>PEPTIDES.</span></h2>
         <p>Research. Quality. Results. &nbsp;|&nbsp; Predator Laboratory</p>
       </div>
-      <img class="banner-logo" src="images/logo.jpg" alt="Predator Laboratory business logo">
     </div>
-  </div></div>
+  </div>
 </header>
 
 <div class="notice"><strong>RESEARCH USE ONLY</strong> — Products displayed on this page are not for human consumption.</div>
