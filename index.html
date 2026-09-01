@@ -83,6 +83,17 @@ section{padding:70px 0}.section-title{text-align:center;margin-bottom:35px}.sect
 .price{color:#fff}.research{color:var(--blue);font-weight:800}
 .cta{background:linear-gradient(135deg,#141414,#090909);border:1px solid #333;border-radius:16px;padding:50px;text-align:center}.cta h2{font-size:40px;margin:0 0 12px}.cta p{color:#bbb;max-width:700px;margin:0 auto 18px;line-height:1.6}
 
+.rewards-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1000px;margin:0 auto 55px}
+.rewards-tile{display:block;width:100%;background:var(--panel);border:1px solid rgba(10,120,220,.35);border-radius:14px;padding:14px;cursor:zoom-in;font:inherit;color:inherit;text-align:inherit;box-shadow:0 0 25px rgba(10,120,220,.12);transition:transform .2s,box-shadow .2s,border-color .2s}
+.rewards-tile:hover,.rewards-tile:focus-visible{transform:translateY(-4px);border-color:var(--blue);box-shadow:0 0 35px rgba(10,120,220,.3),0 20px 40px rgba(0,0,0,.4)}
+.rewards-tile img{width:100%;aspect-ratio:2/3;object-fit:contain;display:block;background:#0a0a0a;border-radius:8px}
+@media(max-width:700px){.rewards-gallery{grid-template-columns:1fr}}
+.rewards-form-box{max-width:640px;margin:0 auto}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;box-shadow:0 0 60px rgba(10,120,220,.35);cursor:default}
+.lightbox-close{position:absolute;top:20px;right:24px;background:none;border:1px solid #444;color:#fff;border-radius:6px;width:40px;height:40px;font-size:20px;cursor:pointer}
+.lightbox-close:hover{border-color:var(--blue);color:var(--blue)}
 
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-grid .full{grid-column:1/-1}
@@ -365,6 +376,48 @@ footer{padding:35px 0;border-top:1px solid #222;color:#888;font-size:14px}.fine{
 </div>
 </section>
 
+<section id="rewards">
+<div class="wrap">
+  <div class="section-title"><h2>REWARDS &amp; LOYALTY</h2><p>Loyal customers. Stronger rewards.</p></div>
+
+  <div class="rewards-gallery">
+    <button class="rewards-tile" type="button" onclick="openLightbox('images/tag-1.jpeg','Predator Laboratory loyalty rewards promotion')">
+      <img src="images/tag-1.jpeg" alt="Predator Laboratory loyalty rewards promotion" loading="lazy">
+    </button>
+    <button class="rewards-tile" type="button" onclick="openLightbox('images/tag-2.jpeg','Predator Laboratory coupon offer promotion')">
+      <img src="images/tag-2.jpeg" alt="Predator Laboratory coupon offer promotion" loading="lazy">
+    </button>
+    <button class="rewards-tile" type="button" onclick="openLightbox('images/tag-3.jpeg','Predator Laboratory loyalty program details')">
+      <img src="images/tag-3.jpeg" alt="Predator Laboratory loyalty program details" loading="lazy">
+    </button>
+    <button class="rewards-tile" type="button" onclick="openLightbox('images/tag-4.jpeg','Predator Laboratory referral program details')">
+      <img src="images/tag-4.jpeg" alt="Predator Laboratory referral program details" loading="lazy">
+    </button>
+  </div>
+
+  <div class="section-title"><h2>JOIN PREDATOR REWARDS</h2><p>Join our loyalty and referral program to receive updates on available rewards and special offers.</p></div>
+  <div class="contact-box rewards-form-box">
+    <form class="contact-form" action="https://formsubmit.co/predatorlaboratory2024@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Predator Rewards Signup">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="form-grid">
+        <div><label for="rewards-name">Full Name</label><input id="rewards-name" name="name" required></div>
+        <div><label for="rewards-email">Email</label><input id="rewards-email" name="email" type="email" required></div>
+        <div><label for="rewards-phone">Phone Number</label><input id="rewards-phone" name="phone" type="tel" required></div>
+        <div><label for="rewards-program">Program</label>
+          <select id="rewards-program" name="program">
+            <option>Loyalty Program</option>
+            <option>Referral Program</option>
+          </select>
+        </div>
+        <div class="full"><label for="rewards-referral">Referral Code / Referred By (optional)</label><input id="rewards-referral" name="referral_code"></div>
+        <div class="full"><button class="btn submit" type="submit">JOIN REWARDS</button></div>
+      </div>
+    </form>
+  </div>
+</div>
+</section>
+
 
 <section id="about-page">
 <div class="wrap">
@@ -488,7 +541,26 @@ footer{padding:35px 0;border-top:1px solid #222;color:#888;font-size:14px}.fine{
   <div class="fine">Research use only. Not for human consumption. The information and statements on this page are not intended to diagnose, treat, cure, or prevent any disease. Product availability, prices, claims, and regulatory requirements should be independently verified before use.</div>
 </div></footer>
 
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" type="button" onclick="closeLightbox()" aria-label="Close preview">✕</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+</div>
+
 <script>
+function openLightbox(src, alt){
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  img.src = src;
+  img.alt = alt || '';
+  lb.classList.add('open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeLightbox();
+});
+
 function toggleMenu(){
   document.getElementById('navLinks').classList.toggle('open');
 }
